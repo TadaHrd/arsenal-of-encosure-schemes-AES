@@ -1,0 +1,25 @@
+.io textarea {
+    font-size: 1.25rem;
+    height: 300px;
+    width: 800px;
+}
+
+#separator-text, #seperator-newline {
+    padding: 2px;
+    font-size: 1.25rem;
+}
+
+select[name="scheme"] {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.select-text {
+    display: inline;
+}
+
+.copy-btn {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+}

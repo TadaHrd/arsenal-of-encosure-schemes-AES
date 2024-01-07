@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+
+    <title>Arsenal of Encosure Schemes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Arsenal of Encosure Schemes (AES)</h1> <br>
+
+    <main>
+        <h3 class="select-text">Select scheme:</h2>
+
+        <select name="scheme" id="select-scheme" onchange="updateValue(input.value, 'encode')">
+            <option selected value="anyway">Anyway Encosure Scheme</option>
+            <option value="emoji">Emoji Encosure Scheme</option>
+            <option value="bussin">Bussin Encosure Scheme</option>
+        </select>
+
+        <br>
+
+        <h3 class="select-text">Separator (\n for newline):</h3>
+        <input type="text" id="separator-text" value="\n" oninput="updateValue(input.value, 'encode')">
+
+        <br>
+
+        <div class="io input">
+            <h2>Decoded</h1>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(input.value)">Copy</button>
+            <textarea name="input" id="input" oninput="updateValue(this.value, 'encode')"></textarea>
+        </div>
+        <div class="io output">
+            <h2>Encoded</h2>
+            <button class="copy-btn" onclick="navigator.clipboard.writeText(output.value)">Copy</button>
+            <textarea name="output" id="output" oninput="updateValue(this.value, 'decode')"></textarea>
+        </div>
+    </main>
+
+
+    <!-- scripts -->
+    <script src="common.js"></script>
+    <script src="anyway encosure scheme/index.js"></script>
+    <script src="emoji encosure scheme/index.js"></script>
+    <script src="bussin encosure scheme/index.js"></script>
+</body>
+</html>
