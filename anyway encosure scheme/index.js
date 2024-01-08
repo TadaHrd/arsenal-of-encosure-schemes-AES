@@ -1,10 +1,14 @@
 // Written by TadaHrd.
 // If this doesn't work blame him.
 
-let anyway_sep_check_regex = /^[^anywANYW*]+$/;
-let anyway_sep_regex = /[^anywANYW*]+/;
+let anyway_sep_check_regex = /^[^anywANYW*\\]+$/;
+let anyway_sep_regex = /[^anywANYW*\\]+/;
 
-function anyway_encode(input, sep) {
+function escaped_anyway_encode(input, sep) {
+    return anyway_encode(input, sep, true);
+}
+
+function anyway_encode(input, sep, escape = false) {
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);
@@ -20,6 +24,7 @@ function anyway_encode(input, sep) {
         let body = (val >> 2) & 0b00111111;
 
         let fix = "*".repeat(tail);
+        let fix2 = "\\*".repeat(tail);
 
         let line = "";
 
@@ -30,7 +35,10 @@ function anyway_encode(input, sep) {
         line += chr(ord("A") + (32 * ((body >> 4) & 1)));
         line += chr(ord("Y") + (32 * ((body >> 5) & 1)));
 
-        line = fix + line + fix;
+        if (escape)
+            line = fix2 + fix + line + fix + fix2
+        else
+            line = fix + line + fix;
 
         ret += line + sep;
     }
@@ -38,23 +46,30 @@ function anyway_encode(input, sep) {
     return ret.substring(0, ret.length - sep.length);
 }
 
+function escaped_anyway_decode(input, sep) {
+    return anyway_decode(input, sep);
+}
+
 function anyway_decode(text, return_string) {
     let ret = [];
 
     for (let line of text.split(anyway_sep_regex)) {
-        let prefix = 0;
+        let stars = 0;
+
+        line = line.replace(/\\\*/g, "");
+
         for (let c of line) {
             if (c == "*")
-                prefix++;
+                stars++;
             else
                 break;
         }
-        prefix = prefix % 4; // make sure the prefix doesn't overflow in edge cases
+        stars = stars % 4; // make sure the prefix doesn't overflow in edge cases
 
-        let anyway = line.substring(prefix, prefix + 6);
+        let anyway = line.substring(stars, stars + 6);
         let bits = [
-            Bool(prefix & 1),
-            Bool((prefix > 1) & 1)
+            Bool(stars & 1),
+            Bool((stars > 1) & 1)
         ];
 
         for (let c of anyway) {

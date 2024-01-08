@@ -44,6 +44,19 @@ For example, "A" would be:
 - Prefix & suffix: `*`
 - Encoded as `*ANYWaY*`
 
+# Escaped AES (EAES)
+
+There is an escaped version of AES that adds escaped stars before and after each word.
+It doesn't get rid of formatting.
+
+The decode step should ignore any `\*` character sequences to work in all places.
+
+This is done to make this easily copyable from places that use markdown formatting (like Discord).
+
+For example, "A" would be:
+- Encoded in AES as `*ANYWaY*`
+- Escape the stars: `*ANYWaY*` -> `\**ANYWaY*\*`
+
 
 ## Examples
 
@@ -65,4 +78,22 @@ l: anYwaY
 d: aNYwaY
 !: *ANYwAY*
 ```
+
+Here's how it would look like in EAES:
+```
+H: AnYWaY
+e: \**aNYwaY*\*
+l: anYwaY
+l: anYwaY
+o: \*\*\****anYwaY***\*\*\*
+,: anYwAY
+ : ANYwAY
+w: \*\*\****aNywaY***\*\*\*
+o: \*\*\****anYwaY***\*\*\*
+r: \*\***ANywaY**\*\*
+l: anYwaY
+d: aNYwaY
+!: \**ANYwAY*\*
+```
+
 The characters at the start of every row aren't present in actual encoded data.
