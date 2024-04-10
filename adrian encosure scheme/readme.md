@@ -72,36 +72,24 @@ For example, "A" would be:
 
 The string "Hello, world!" would look like:
 ```
-H: AnYWaY
-e: *aNYwaY*
-l: anYwaY
-l: anYwaY
-o: ***anYwaY***
-,: anYwAY
- : ANYwAY
-w: ***aNywaY***
-o: ***anYwaY***
-r: **ANywaY**
-l: anYwaY
-d: aNYwaY
-!: *ANYwAY*
+He: *adRIAN* *jE* **GeJ**
+ll: adRIAn ***jE*** **geJ**
+o,: aDRian ***jE*** **geJ**
+ w: ***adRIAN*** *JE* ***gEJ***
+or: **adRian** jE ***geJ***
+ld: adRIAn *jE* **geJ**
+!: *ADRIAN* JE **GEJ**
 ```
 
-Here's how it would look like in EAES:
+Here's how it would look like in EAgES:
 ```
-H: AnYWaY
-e: \**aNYwaY*\*
-l: anYwaY
-l: anYwaY
-o: \*\*\****anYwaY***\*\*\*
-,: anYwAY
- : ANYwAY
-w: \*\*\****aNywaY***\*\*\*
-o: \*\*\****anYwaY***\*\*\*
-r: \*\***ANywaY**\*\*
-l: anYwaY
-d: aNYwaY
-!: \**ANYwAY*\*
+He: \**adRIAN*\* \**jE*\* \*\***GeJ**\*\*
+ll: adRIAn \*\*\****jE***\*\*\* \*\***geJ**\*\*
+o,: aDRian \*\*\****jE***\*\*\* \*\***geJ**\*\*
+ w: \*\*\****adRIAN***\*\*\* \**JE*\* \*\*\****gEJ***\*\*\*
+or: \*\***adRian**\*\* jE \*\*\****geJ***\*\*\*
+ld: adRIAn \**jE*\* \*\***geJ**\*\*
+!: \**ADRIAN*\* JE \*\***GEJ**\*\*
 ```
 
 The characters at the start of every row aren't present in actual encoded data.

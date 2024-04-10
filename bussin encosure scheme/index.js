@@ -73,14 +73,13 @@ function bussin_encode(input, sep) {
         let c = charBussinTable[chr(val)];
         if (c) {
             ret += c + sep;
-            continue;
+        } else {
+            let nibble0 = (val >> 0) & 0b1111;
+            let nibble1 = (val >> 4) & 0b1111;
+
+            ret += codeBussinTable[nibble1] + sep;
+            ret += codeBussinTable[nibble0] + sep;
         }
-
-        let nibble0 = (val >> 0) & 0b1111;
-        let nibble1 = (val >> 4) & 0b1111;
-
-        ret += codeBussinTable[nibble1] + sep;
-        ret += codeBussinTable[nibble0] + sep;
     }
 
     ret = ret.substring(0, ret.length - sep.length);
@@ -100,17 +99,16 @@ function bussin_decode(text, return_string) {
         let c = charBussinTable[v0];
         if (c) {
             ret.push(ord(c));
-            continue;
+        } else {
+            i++;
+
+            let nibble0 = codeBussinTable[v0];
+            let nibble1 = codeBussinTable[v1];
+
+            let num = nibble1 + (nibble0 << 4);
+
+            ret.push(num);
         }
-
-        i++;
-
-        let nibble0 = codeBussinTable[v0];
-        let nibble1 = codeBussinTable[v1];
-
-        let num = nibble1 + (nibble0 << 4);
-
-        ret.push(num);
     }
 
     if (return_string)
