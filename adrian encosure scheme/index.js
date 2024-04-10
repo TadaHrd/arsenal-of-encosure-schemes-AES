@@ -135,6 +135,8 @@ function adrian_decode(text, return_string) {
 
         let new_line = line.replace(/[* ]/g, "");
 
+        let dual_byte = ord(new_line[0]) > 96;
+
         new_line = new_line.substring(1);
 
         let bits = [
