@@ -22,9 +22,14 @@ For example, to turn `A` into LiES:
 2. Turn `A` into binary: `01000001`
 3. Set the characters' cases: `01000 001` -> `lOrem ipS`
 
+The lorem ipsum sequence can be replaced with any text as long as it doesn't use characters other than a-z, A-Z, `,`, `.`, and spaces.
+This only works with decoding, the encoder's value is fixed (editable with console command `setNewLoremIpsum("newLoremIpsum")`).
+
 ## Lorem ipsum sequence
 
 There are no newlines in the actual sequence (they're replaced by spaces).
+
+Actual sequence can be found in [index.js](index.js).
 
 ```text
 lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -50,3 +55,25 @@ ut suscipit elit sem, eu euismod augue hendrerit eget.
 curabitur porttitor lectus non rutrum dignissim. duis hendrerit non massa nec tincidunt.
 sed et maximus velit. morbi a ante risus.
 ```
+
+## Examples
+
+### Hello, world!
+
+```
+H: lOreM ips
+e: uM DolOr S
+l: iT AmET, co
+l: nSEcTEtu
+o: r ADiPISC
+,: inG eLIt. v
+ : ivAmus im
+w: pERDiET L
+o: oREm VEL M
+r: aURIs uLt
+l: rICeS, Nec
+d:  uLTriCie
+!: s tUrpis T
+```
+
+The stuff at the start of every row aren't present in actual encoded data.
