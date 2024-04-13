@@ -1,4 +1,4 @@
-# Lorem ipsum Encosure Scheme (LES)
+# Lorem ipsum Encosure Scheme (LiES)
 
 This encosure scheme uses lorem ipsum to store data.
 
@@ -13,11 +13,11 @@ Every bit controls the case in a character
 | 0   | lowercase |
 | 1   | uppercase |
 
-To turn a byte into an LES byte:
+To turn a byte into an LiES byte:
 1. Get the next 8 characters of lorem ipsum (spaces and periods don't count).
 2. Set each character's case depending on the bit value (shown above).
 
-For example, to turn `A` into LES:
+For example, to turn `A` into LiES:
 1. Get 8 characters of lorem ipsum: `lorem ips`
 2. Turn `A` into binary: `01000001`
 3. Set the characters' cases: `01000 001` -> `lOrem ipS`
