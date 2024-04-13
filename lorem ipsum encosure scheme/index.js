@@ -69,11 +69,12 @@ function lorem_decode(text, return_string) {
         else return [];
     }
 
-    text = text.replace(/[,. ]/g, "");
+    text = text.replace(/[^a-zA-Z]/g, "");
 
     for (let i = 0; i < text.length; i += 8) {
         let bits = [];
         for (let j = 0; j < 8; j++) {
+            if ((i + j) >= text.length) break;
             bits.push(ord(text[i + j]) < 96);
         }
 
