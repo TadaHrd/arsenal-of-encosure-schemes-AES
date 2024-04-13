@@ -3,13 +3,13 @@
 
 // functions
 window.chr = String.fromCharCode;
-window.ord = v => v.charCodeAt(0);
+window.ord = char => char.charCodeAt(0);
 window.rand = max => Math.floor(Math.random() * (max + 1)) % (max + 1);
-window.updateValue = function updateValue(value, type) {
+window.updateValue = function updateValue(scheme, type) {
     if (type == "encode")
-        output.value = window[schemeSelect.value + "_encode"](value, separator.value.replace(/\\n/g, "\n"));
+        output.value = window[schemeSelect.value + "_encode"](scheme, separator.value.replace(/\\n/g, "\n"));
     else if (type == "decode")
-        input.value = window[schemeSelect.value + "_decode"](value, true);
+        input.value = window[schemeSelect.value + "_decode"](scheme, true);
 };
 
 // variables
