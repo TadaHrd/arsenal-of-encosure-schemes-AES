@@ -4,6 +4,7 @@ This encosure scheme uses the word "anyway" with formatting to store data.
 
 Bits in bytes are talked about as LSb to MSb.
 This means that the 1's place bit is bit 0 and the 128's place bit is bit 7.
+Byte sequences start with the MSb first.
 
 Every byte has 2 parts:
 - A tail (bits 0-1)

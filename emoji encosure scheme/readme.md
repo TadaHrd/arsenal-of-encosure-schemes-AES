@@ -4,6 +4,7 @@ This encosure scheme associates each combination of 4 bits with multiple emojis 
 
 Bits in bytes are talked about as LSb to MSb.
 This means that the 1's place bit is bit 0 and the 128's place bit is bit 7.
+Byte sequences start with the MSb first.
 
 Each byte has 2 parts:
 - 1st Nibble (0-3)
@@ -62,4 +63,4 @@ d: 🐢👽
 
 The stuff at the start of every row aren't present in actual encoded data.
 
-Newlines cannot be present in actual EES code.
+Newlines aren't present in actual EES code.

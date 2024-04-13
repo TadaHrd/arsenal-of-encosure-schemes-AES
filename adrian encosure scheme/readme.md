@@ -4,6 +4,7 @@ This encosure scheme uses the sentence "adrian je gej" with formatting to store 
 
 Bits in bytes are talked about as LSb to MSb.
 This means that the 1's place bit is bit 0 and the 128's place bit is bit 7.
+Byte sequences start with the MSb first.
 
 Every word (2 bytes) has 2 parts:
 - A tail (bits 0-5)
@@ -31,7 +32,7 @@ The bits control each letter like this:
 
 | letter | bit |
 | ------ | --- |
-| A      | on if word only contains one byte |
+| A      | on if word contains only one byte |
 | D      | 6   |
 | R      | 7   |
 | I      | 8   |
