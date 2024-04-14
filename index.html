@@ -15,15 +15,37 @@
     <main>
         <h3 class="select-text">Select scheme:</h2>
 
-        <select name="scheme" id="select-scheme" onchange="updateValue(input.value, 'encode')">
-            <option selected value="anyway">Anyway Encosure Scheme</option>
-            <option value="escaped_anyway">Escaped Anyway Encosure Scheme</option>
-            <option value="emoji">Emoji Encosure Scheme</option>
-            <option value="bussin">Bussin Encosure Scheme</option>
-            <option value="adrian">Adrian Encosure Scheme</option>
-            <option value="escaped_adrian">Escaped Adrian Encosure Scheme</option>
-            <option value="lorem">Lorem ipsum Encosure Scheme</option>
-        </select>
+        <table id="schemeSelect">
+            <thead>
+                <tr>
+                    <td>Scheme</td> <td>Select</td> <td>Escape?</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Anyway Encosure Scheme</td>
+                    <td><input type="radio" checked="checked" value="anyway" name="schemeChoice" id="anywayChoice" onchange="updateScheme(event.target)"></td>
+                    <td><input type="checkbox" name="anyway" id="" onchange="setEscaped(event.target)"></td>
+                </tr>
+                <tr>
+                    <td>Emoji Encosure Scheme</td>
+                    <td><input type="radio" value="emoji" name="schemeChoice" id="emojiChoice" onchange="updateScheme(event.target)"></td>
+                </tr>
+                <tr>
+                    <td>Bussin Encosure Scheme</td>
+                    <td><input type="radio" value="bussin" name="schemeChoice" id="bussinChoice" onchange="updateScheme(event.target)"></td>
+                </tr>
+                <tr>
+                    <td>Adrian Encosure Scheme</td>
+                    <td><input type="radio" value="adrian" name="schemeChoice" id="adrianChoice" onchange="updateScheme(event.target)"></td>
+                    <td><input type="checkbox" name="adrian" id="" onchange="setEscaped(event.target)"></td>
+                </tr>
+                <tr>
+                    <td>Lorem ipsum Encosure Scheme</td>
+                    <td><input type="radio" value="lorem" name="schemeChoice" id="loremChoice" onchange="updateScheme(event.target)"></td>
+                </tr>
+            </tbody>
+        </table>
 
         <br>
 

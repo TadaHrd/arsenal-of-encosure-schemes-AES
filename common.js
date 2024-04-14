@@ -5,12 +5,23 @@
 window.chr = String.fromCharCode;
 window.ord = char => char.charCodeAt(0);
 window.rand = max => Math.floor(Math.random() * (max + 1)) % (max + 1);
-window.updateValue = function updateValue(scheme, type) {
+window.updateValue = function updateValue(data, type) {
     if (type == "encode")
-        output.value = window[schemeSelect.value + "_encode"](scheme, separator.value.replace(/\\n/g, "\n"));
+        window.output.value = window["escaped_".substring(0, 8 * window.escaped) + window.selectedScheme + "_encode"](data, separator.value.replace(/\\n/g, "\n"));
     else if (type == "decode")
-        input.value = window[schemeSelect.value + "_decode"](scheme, true);
+        window.input.value = window["escaped_".substring(0, 8 * window.escaped) + window.selectedScheme + "_decode"](data, true);
 };
+window.updateScheme = function updateScheme(element) {
+    window.escaped = element.parentElement.parentElement.querySelector("input[type='checkbox']")?.checked || false;
+    window.selectedScheme = element.value;
+    updateValue(window.input.value, "encode");
+}
+window.setEscaped = function setEscaped(element) {
+    if (element.name == window.selectedScheme) {
+        escaped = element.checked;
+        updateValue(window.input.value, "encode");
+    }
+}
 
 // variables
 window.textEncoder = new TextEncoder();
@@ -18,7 +29,10 @@ window.textDecoder = new TextDecoder();
 
 window.input = document.getElementById("input");
 window.output = document.getElementById("output");
-window.schemeSelect = document.getElementById("select-scheme");
+
+window.escaped = false;
+window.selectedScheme = "anyway";
+
 window.separator = document.getElementById("separator-text");
 
 // types

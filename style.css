@@ -1,3 +1,13 @@
+.select-text {
+    display: inline;
+}
+
+.copy-btn {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+}
+
 .io textarea {
     font-size: 1.25rem;
     height: 300px;
@@ -9,17 +19,28 @@
     font-size: 1.25rem;
 }
 
-select[name="scheme"] {
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+#schemeSelect {
+    border-collapse: collapse;
 }
 
-.select-text {
-    display: inline;
+#schemeSelect thead td {
+    text-align: center;
+    font-weight: bold;
 }
 
-.copy-btn {
-    display: block;
-    margin-bottom: 5px;
+#schemeSelect, #schemeSelect td {
+    border: 2px solid;
+    margin: 0;
+    padding: 5px;
     font-size: 1.25rem;
+}
+
+#schemeSelect td.invisibleName {
+    display: none;
+}
+
+#schemeSelect input {
+    margin: 4px;
+    height: 20px;
+    width: 20px;
 }

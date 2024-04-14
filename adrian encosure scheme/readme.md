@@ -49,9 +49,9 @@ For example, "A" would be:
 - 01000001 in binary
 - Body: 01, Tail: 000001
 - Only 1 byte
-- Letters: `adRIAN JE GEJ`
+- Letters: `AdRIAN JE GEJ`
 - Prefixes & suffixes: `*` ` ` ` `
-- Encoded as `adRIAN JE *GEJ*`
+- Encoded as `*AdRIAN* JE GEJ`
 
 # Escaped AES (EAgES)
 
