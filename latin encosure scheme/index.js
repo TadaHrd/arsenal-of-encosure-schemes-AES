@@ -516,6 +516,8 @@ let latinTable = {
 };
 
 function latin_encode(input, sep) {
+    if (!input) return "";
+
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);
@@ -527,7 +529,7 @@ function latin_encode(input, sep) {
         ret += latinTable[val] + sep;
     }
 
-    ret[0] = ret[0].toUpperCase();
+    ret = ret[0].toUpperCase() + ret.substring(1);
 
     return ret.substring(0, ret.length - sep.length) + ".";
 }
