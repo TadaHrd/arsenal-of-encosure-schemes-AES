@@ -44,13 +44,17 @@
                     <td>Lorem ipsum Encosure Scheme</td>
                     <td><input type="radio" value="lorem" name="schemeChoice" id="loremChoice" onchange="updateScheme(event.target)"></td>
                 </tr>
+                <tr>
+                    <td>Latin Encosure Scheme</td>
+                    <td><input type="radio" value="latin" name="schemeChoice" id="loremChoice" onchange="updateScheme(event.target)"></td>
+                </tr>
             </tbody>
         </table>
 
         <br>
 
         <h3 class="select-text">Separator (\n for newline):</h3>
-        <input type="text" id="separator-text" value="\n" oninput="updateValue(input.value, 'encode')">
+        <input type="text" id="separator-text" value=" " oninput="updateValue(input.value, 'encode')">
 
         <br>
 
@@ -76,5 +80,6 @@
     <script src="bussin encosure scheme/index.js"></script>
     <script src="adrian encosure scheme/index.js"></script>
     <script src="lorem ipsum encosure scheme/index.js"></script>
+    <script src="latin encosure scheme/index.js"></script>
 </body>
 </html>
