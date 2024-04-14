@@ -80,7 +80,7 @@ function lorem_decode(text, return_string) {
 
         let num = 0;
         for (let i = 0; i < 8; i++)
-            num += Num(bits[i]) << 7 - i;
+            num += Num(bits[i]) << (7 - i);
 
         ret.push(num);
     }
