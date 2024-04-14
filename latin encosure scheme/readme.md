@@ -139,16 +139,19 @@ Every byte value is a latin word.
 | 126        | sol                 | 254        | resonantia       |
 | 127        | stella              | 255        | finis            |
 
+Optionally, the first letter is made uppercase and a dot is added after the last letter.
+
 For example, to turn `A` into LES:
 1. Get its ASCII code: 65
 2. Look up 65 in the table above: `mons`
+3. Make first letter uppercase and add dot at the end: `mons` -> `Mons.`
 
 ## Examples
 
 ### Hello, world!
 
 ```
-H: potentia
+H: Potentia
 e: libertas
 l: ventus
 l: ventus
