@@ -112,7 +112,7 @@ function bussin_decode(text, return_string) {
     }
 
     if (return_string)
-        return textDecoder.decode(new Uint8Array(ret))
+        return textDecoder.decode(new Uint8Array(ret));
 
     return ret;
 }
