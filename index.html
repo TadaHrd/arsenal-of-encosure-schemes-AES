@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Arsenal of Encosure Schemes (AES) v1.0</h1> <br>
+    <h1>Arsenal of Encosure Schemes (AES) v1.1</h1> <br>
 
     <main>
         <h3 class="select-text">Select scheme:</h2>
@@ -46,7 +46,11 @@
                 </tr>
                 <tr>
                     <td>Latin Encosure Scheme</td>
-                    <td><input type="radio" value="latin" name="schemeChoice" id="loremChoice" onchange="updateScheme(event.target)"></td>
+                    <td><input type="radio" value="latin" name="schemeChoice" id="latinChoice" onchange="updateScheme(event.target)"></td>
+                </tr>
+                <tr>
+                    <td>Ook Encosure Scheme</td>
+                    <td><input type="radio" value="ook" name="schemeChoice" id="ookChoice" onchange="updateScheme(event.target)"></td>
                 </tr>
             </tbody>
         </table>
@@ -81,5 +85,6 @@
     <script src="adrian encosure scheme/index.js"></script>
     <script src="lorem ipsum encosure scheme/index.js"></script>
     <script src="latin encosure scheme/index.js"></script>
+    <script src="ook encosure scheme/index.js"></script>
 </body>
 </html>
