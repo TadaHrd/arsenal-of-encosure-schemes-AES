@@ -515,8 +515,14 @@ let latinTable = {
     "finis": 255
 };
 
+let latin_sep_check_regex = /^[^A-Za-z.]+$/;
+let latin_sep_regex = /[^A-Za-z.]+/;
+
 function latin_encode(input, sep) {
     if (!input) return "";
+
+    if (!latin_sep_check_regex.test(sep))
+        sep = " ";
 
     let data;
     if (typeof input == "string")
@@ -532,4 +538,19 @@ function latin_encode(input, sep) {
     ret = ret[0].toUpperCase() + ret.substring(1);
 
     return ret.substring(0, ret.length - sep.length) + ".";
+}
+
+function latin_decode(text, return_string) {
+    let ret = [];
+
+    text = text.replace(".", "").toLowerCase();
+
+    for (let val of text.split(latin_sep_regex)) {
+        ret.push(latinTable[val]);
+    }
+
+    if (return_string)
+        return textDecoder.decode(new Uint8Array(ret));
+
+    return ret;
 }
