@@ -23,7 +23,7 @@ window.setEscaped = function setEscaped(element) {
     }
 }
 window.randomOfArray = function randomOfArray(array) {
-    return array[window.rand(array.length)];
+    return array[window.rand(array.length - 1)];
 }
 
 // variables
