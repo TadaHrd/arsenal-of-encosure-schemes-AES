@@ -533,18 +533,3 @@ function latin_encode(input, sep) {
 
     return ret.substring(0, ret.length - sep.length) + ".";
 }
-
-function emoji_decode(text, return_string) {
-    let ret = [];
-
-    text = text.replace(".", "").toLowerCase();
-
-    for (let val of text.split(" ")) {
-        ret.push(latinTable[val]);
-    }
-
-    if (return_string)
-        return textDecoder.decode(new Uint8Array(ret));
-
-    return ret;
-}
