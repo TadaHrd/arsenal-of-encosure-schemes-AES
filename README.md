@@ -10,3 +10,4 @@
 6. [Latin Encosure Scheme (LES)](latin%20encosure%20scheme)
 7. [Ook Encosure Scheme (OES)](ook%20encosure%20scheme)
 8. [Brainfuck Encosure Scheme (BfES)](brainfuck%20encosure%20scheme)
+8. [Prime Encosure Scheme (PES)](prime%20encosure%20scheme)
