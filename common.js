@@ -22,6 +22,9 @@ window.setEscaped = function setEscaped(element) {
         updateValue(window.input.value, "encode");
     }
 }
+window.randomOfArray = function randomOfArray(array) {
+    return array[window.rand(array.length)];
+}
 
 // variables
 window.textEncoder = new TextEncoder();
