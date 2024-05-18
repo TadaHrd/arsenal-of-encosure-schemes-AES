@@ -107,7 +107,7 @@ Every byte value is a latin word.
 | 94         | scientia            | 222        | fulmen          |
 | 95         | virtus              | 223        | tempestas       |
 | 96         | aequitas            | 224        | procella        |
-| 97         | spes                | 225        | expugnatio      |
+| 97         | spero               | 225        | expugnatio      |
 | 98         | gratia              | 226        | praefuro        |
 | 99         | dignitas            | 227        | grassor         |
 | 100        | potestas            | 228        | lutum           |

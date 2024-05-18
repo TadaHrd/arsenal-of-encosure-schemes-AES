@@ -68,13 +68,10 @@ function ook_decode(text, return_string) {
     let ret = [];
 
     let text_split = text.split(ook_sep_regex);
-    console.log(text_split)
 
     for (let i = 0; i < text_split.length; i++) {
         let v0 = text_split[i];
         let v1 = text_split[i + 1] || ookTable[0];
-
-        console.log(v0, v1)
 
         i++;
 

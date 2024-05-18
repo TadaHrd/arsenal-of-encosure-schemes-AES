@@ -13,7 +13,7 @@ function prime_encode(input, sep) {
     else
         data = input;
 
-    if (!prime_sep_check_regex.test(sep))
+    if (!prime_sep_check_regex.test(sep) || sep == undefined)
         sep = ","
 
     let ret = "";
@@ -29,7 +29,6 @@ function prime_encode(input, sep) {
         if ((val >> 7) & 0b1) v *= 19;
 
         ret += v + sep;
-        console.log(2 * val);
     }
 
     return ret.substring(0, ret.length - sep.length);

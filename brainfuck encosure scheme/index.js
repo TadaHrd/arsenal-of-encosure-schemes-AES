@@ -51,7 +51,7 @@ function brainfuck_encode(input) {
 
     let ret = "";
 
-    for (let val of input) {
+    for (let val of data) {
         val = ord(val);
 
         let v0 = changeBrainfuckCharacter(brainfuckTable[(val >> 0) & 0b11]);
