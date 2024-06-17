@@ -52,7 +52,7 @@ function brainfuck_encode(input) {
     let ret = "";
 
     for (let val of data) {
-        val = ord(val);
+        val = val;
 
         let v0 = changeBrainfuckCharacter(brainfuckTable[(val >> 0) & 0b11]);
         let v1 = changeBrainfuckCharacter(brainfuckTable[(val >> 2) & 0b11]);
