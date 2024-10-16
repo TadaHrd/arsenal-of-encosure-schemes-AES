@@ -1,7 +1,7 @@
 // Written by TadaHrd.
 // If this doesn't work blame him.
 
-let codeBussinTable = {
+const codeBussinTable = {
     0b0000: "nocap",
     0b0001: "bussin",
     0b0010: "cap",
@@ -37,7 +37,7 @@ let codeBussinTable = {
     "smh":    0b1111,
 };
 
-let charBussinTable = {
+const charBussinTable = {
     "?":   "wdym",
     ".":   "period",
     " ":   "lowkey",

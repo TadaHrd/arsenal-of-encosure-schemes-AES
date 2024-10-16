@@ -1,8 +1,7 @@
 // Written by TadaHrd.
 // If this doesn't work blame him.
 
-
-let emojiTable = {
+const emojiTable = {
     0b0000: ["😀", "😁", "😂", "🤣", "😃"],
     0b0001: ["😄", "😅", "😆", "😉", "😊"],
     0b0010: ["😋", "😎", "😍", "😘", "🥰"],

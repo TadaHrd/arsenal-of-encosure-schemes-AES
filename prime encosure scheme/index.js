@@ -5,8 +5,6 @@ let prime_sep_regex = /[^0-9]+/g;
 let prime_sep_check_regex = /^[^0-9]+$/;
 
 function prime_encode(input, sep) {
-    if (!input) return "";
-
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);

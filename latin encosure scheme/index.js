@@ -1,7 +1,7 @@
 // Written by TadaHrd.
 // If this doesn't work blame him.
 
-let latinTable = {
+const latinTable = {
     0: "nihil",
     1: "primus",
     2: "duplex",
@@ -520,16 +520,15 @@ let latin_sep_check_regex = /^[^A-Za-z.]+$/;
 let latin_sep_regex = /[^A-Za-z.]+/;
 
 function latin_encode(input, sep) {
-    if (!input) return "";
-
-    if (!latin_sep_check_regex.test(sep))
-        sep = " ";
-
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);
     else
         data = input;
+
+    if (!latin_sep_check_regex.test(sep))
+        sep = " ";
+
 
     let ret = "";
     for (let val of data) {
