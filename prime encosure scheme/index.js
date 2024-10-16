@@ -57,3 +57,6 @@ function prime_decode(text, return_string) {
 
     return ret;
 }
+
+if (window.encosureSchemes instanceof Set)
+    window.encosureSchemes.add("PES")

@@ -64,9 +64,9 @@ function anyway_decode(text, return_string) {
             else
                 break;
         }
-        stars = stars % 4; // make sure the prefix doesn't overflow in edge cases
 
         let anyway = line.substring(stars, stars + 6);
+        stars %= 4; // make sure the prefix doesn't overflow in edge cases
         let bits = [
             Bool(stars & 1),
             Bool((stars > 1) & 1)
@@ -88,3 +88,6 @@ function anyway_decode(text, return_string) {
 
     return ret;
 }
+
+if (window.encosureSchemes instanceof Set)
+    window.encosureSchemes.add("AES")

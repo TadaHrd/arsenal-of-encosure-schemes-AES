@@ -41,3 +41,6 @@ window.separator = document.getElementById("separator-text");
 // types
 window.Bool = Boolean;
 window.Num = Number;
+
+// encosure schemes set
+window.encosureSchemes = new Set;

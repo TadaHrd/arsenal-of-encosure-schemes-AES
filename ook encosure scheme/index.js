@@ -88,3 +88,6 @@ function ook_decode(text, return_string) {
 
     return ret;
 }
+
+if (window.encosureSchemes instanceof Set)
+    window.encosureSchemes.add("OES")
