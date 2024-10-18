@@ -58,7 +58,6 @@ For example, "A" would be:
 - Encoded in AES as `*ANYWaY*`
 - Escape the stars: `*ANYWaY*` -> `\**ANYWaY*\*`
 
-
 ## Examples
 
 ### Hello, world!

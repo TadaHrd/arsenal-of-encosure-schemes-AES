@@ -2,26 +2,26 @@
 
 This encosure scheme uses commented [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) commands to store data.
 
-Bits in bytes are talked about as LSb to MSb.
+Bits (and dibits) in bytes are talked about as LSb to MSb.
 This means that the 1's place bit is bit 0 and the 128's place bit is bit 7.
 Byte sequences start with the MSb first.
 
 Each byte has 4 parts:
-- 1st Dibit (0-1)
-- 2nd Dibit (2-3)
-- 3rd Dibit (4-5)
-- 4th Dibit (6-7)
+- 1st Dibit (bits 0-1)
+- 2nd Dibit (bits 2-3)
+- 3rd Dibit (bits 4-5)
+- 4th Dibit (bits 6-7)
 
-A dibit is a unit of data equal to 2 bits.
+A dibit is a made-up unit of data equal to 2 bits.
 
 To turn a byte into a BfES byte:
-1. Split the byte into 4 dibits.
+1. Split the byte into 4 dibits and reverse them (least significant comes first).
 2. Turn each dibit into a brainfuck command using the table below.
 3. Include a comment (1/3 chance)
 4. Include a newline afterwards (1/5 chance and only if comment included)
 5. Include another newline (1/8 chance and only if first newline included)
 
-Nibble to Gen Z slang word table:
+Dibit to Brainfuck command table:
 
 | Bits | Command                   |
 | ---- | ------------------------- |
@@ -29,6 +29,14 @@ Nibble to Gen Z slang word table:
 | 01   | `-`                       |
 | 10   | `>`, 1/6 chance to be `,` |
 | 11   | `<`, 1/4 chance to be `.` |
+
+For example, to turn `B` into BfES:
+1. Turn it into binary: `01000010`
+2. Split it into 4 dibits: `10 00 00 01` (dibit order was reversed)
+3. Turn the dibits into brainfuck commands: `10 00 00 01` -> `>++-`
+4. Optionally add a comment: `>++- ; hard to explain, look at the readme`
+
+`A` would be `-++-`
 
 ## Comments
 
@@ -58,13 +66,6 @@ reminder: i forgor
 cant wait to have minecraft in brainfuck
 ```
 
-##
-
-For example, to turn `A` into BfES:
-1. Turn it into binary: `01 00 00 01`
-2. Split it into 4 dibits: `01 00 00 01` (dibit order was reversed)
-3. Turn the dibits into brainfuck commands: `01 00 00 01` -> `-++-`
-
 ## Examples
 
 ### Hello, world!
@@ -85,6 +86,6 @@ d: +->-
 !: -+,+
 ```
 
-The stuff at the start of every row aren't present in actual encoded data.
+The characters at the start of every row aren't present in actual encoded data.
 
 Comments and newlines were left out so that the code is more easily understandable.

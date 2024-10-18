@@ -13,6 +13,7 @@ let brainfuckTable = {
     "<": 3, ".": 3,
 };
 
+// if you add to these, update README.md as well
 let codeExplanations = [
     "hard to explain, look at the readme",
     "does something, forgot its purpose",
