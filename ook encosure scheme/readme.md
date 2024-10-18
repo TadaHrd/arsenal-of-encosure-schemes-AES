@@ -14,7 +14,7 @@ Every nibble has 2 parts:
 - A tail (bits 0-1)
 - A body (bits 2-3)
 
-The tail dictates the punctian after Ook.
+The tail dictates the punction after Ook.
 
 | bit 0 | bit 1 | punctuation |
 | ----- | ----- | ----------- |
