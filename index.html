@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Arsenal of Encosure Schemes (AES) v1.6fix3</h1> <br>
+    <h1>Arsenal of Encosure Schemes (AES) v2.0</h1> <br>
 
     <main>
         <h2 class="select-text">Select scheme:</h2>
@@ -25,7 +25,7 @@
                 <tr>
                     <td>Anyway Encosure Scheme</td>
                     <td><input type="radio" checked="checked" value="anyway" name="schemeChoice" id="anywayChoice" onchange="updateScheme(event.target)"></td>
-                    <td><input type="checkbox" name="anyway" id="" onchange="setEscaped(event.target)"></td>
+                    <td><input type="checkbox" name="anyway" onchange="setEscaped(event.target)"></td>
                 </tr>
                 <tr>
                     <td>Emoji Encosure Scheme</td>
@@ -41,7 +41,7 @@
                 <tr>
                     <td>Adrian Encosure Scheme</td>
                     <td><input type="radio" value="adrian" name="schemeChoice" id="adrianChoice" onchange="updateScheme(event.target)"></td>
-                    <td><input type="checkbox" name="adrian" id="" onchange="setEscaped(event.target)"></td>
+                    <td><input type="checkbox" name="adrian" onchange="setEscaped(event.target)"></td>
                 </tr>
                 <tr>
                     <td>Lorem ipsum Encosure Scheme</td>
@@ -62,6 +62,11 @@
                 <tr>
                     <td>Prime Encosure Scheme</td>
                     <td><input type="radio" value="prime" name="schemeChoice" id="primeChoice" onchange="updateScheme(event.target)"></td>
+                </tr>
+                <tr>
+                    <td style="color: gold; border: 2px solid white;">Grand Encosure Scheme</td>
+                    <td><input type="radio" value="grand" name="schemeChoice" id="grandChoice" onchange="updateScheme(event.target)"></td>
+                    <td><input type="checkbox" name="grand" onchange="setEscaped(event.target)"></td>
                 </tr>
             </tbody>
         </table>
@@ -99,5 +104,6 @@
     <script src="ook encosure scheme/index.js"></script>
     <script src="brainfuck encosure scheme/index.js"></script>
     <script src="prime encosure scheme/index.js"></script>
+    <script src="grand encosure scheme/index.js"></script> <!-- NOTE: this MUST be after AES, EES, and BES. It depends on those schemes. -->
 </body>
 </html>
