@@ -53,3 +53,7 @@
     height: 20px;
     width: 20px;
 }
+
+#schemeSelect .sep td {
+    padding: 0;
+}
