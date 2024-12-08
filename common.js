@@ -18,12 +18,15 @@ window.updateScheme = function updateScheme(element) {
 }
 window.setEscaped = function setEscaped(element) {
     if (element.name == window.selectedScheme) {
-        escaped = element.checked;
+        window.escaped = element.checked;
         updateValue(window.input.value, "encode");
     }
 }
 window.randomOfArray = function randomOfArray(array) {
     return array[window.rand(array.length - 1)];
+}
+window.shuffleString = function shuffleString(string) {
+    return string.split('').sort(function() { return 0.5-Math.random() } ).join('');;
 }
 
 // variables

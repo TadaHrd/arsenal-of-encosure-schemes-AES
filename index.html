@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Arsenal of Encosure Schemes (AES) v2.0fix3</h1> <br>
+    <h1>Arsenal of Encosure Schemes (AES) v2.1</h1> <br>
 
     <main>
         <h2 class="select-text">Select scheme:</h2>
@@ -71,6 +71,10 @@
                     <td><input type="radio" value="grand" name="schemeChoice" id="grandChoice" onchange="updateScheme(event.target)"></td>
                     <td><input type="checkbox" name="grand" onchange="setEscaped(event.target)"></td>
                 </tr>
+                <tr>
+                    <td>ABCDEFGH Encosure Scheme</td>
+                    <td><input type="radio" value="abc" name="schemeChoice" id="abcChoice" onchange="updateScheme(event.target)"></td>
+                </tr>
             </tbody>
         </table>
 
@@ -108,5 +112,6 @@
     <script src="brainfuck encosure scheme/index.js"></script>
     <script src="prime encosure scheme/index.js"></script>
     <script src="grand encosure scheme/index.js"></script> <!-- NOTE: this MUST be after AES, EES, and BES. It depends on those schemes. -->
+    <script src="abcdefgh encosure scheme/index.js"></script>
 </body>
 </html>
