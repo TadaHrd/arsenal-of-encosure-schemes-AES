@@ -6,7 +6,7 @@ Bits in bytes are talked about as LSb to MSb.
 This means that the 1's place bit is bit 0 and the 128's place bit is bit 7.
 Byte sequences start with the MSb first.
 
-The 8 prime number are: `2`, `3`, `5`, `7`, `11`, `13`, `17`, `19`.
+The 8 prime numbers are: `2`, `3`, `5`, `7`, `11`, `13`, `17`, `19`.
 
 To turn a byte into a PES byte:
 1. Get its bits
