@@ -44,6 +44,7 @@ o: 46410
 r: 7293
 l: 7735
 d: 1105
+!: 26
 ```
 
 The characters at the start of every row aren't present in actual encoded data.
