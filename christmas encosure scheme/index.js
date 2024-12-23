@@ -37,7 +37,7 @@ function christmas_encode(input) {
             let bit = (val >> i) & 1;
             if (seqStarted || bit == 1) {
                 seqStarted = true;
-                curr += bit == 1 ? "🎁" : "🥔";
+                curr += bit == 0 ? "🎁" : "🥔";
             }
         }
         
@@ -88,9 +88,9 @@ function christmas_decode(text, return_string) {
                 ret.push(getCurr());
                 break;
 
-            case "🎁":
-                curr += 1 << currBit;
             case "🥔":
+                curr += 1 << currBit;
+            case "🎁":
                 currBit -= 1;
                 break;
 

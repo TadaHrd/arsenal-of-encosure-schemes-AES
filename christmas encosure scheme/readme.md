@@ -8,8 +8,8 @@ Byte sequences start with the MSb first.
 
 1. Each byte is split into bits.
 2. Bytes are chunks, which are separated by 🎄 emojis.
-    - NOTE: it can be on the start, but it CAN'T be on the end of the encoded string.
-3. Each bit is either a potato 🥔 (if 0) or a present 🎁 (if 1)
+    - NOTE: it CAN'T be on the end or start of the encoded string.
+3. Each bit is either a potato 🎁 (if 0) or a present 🥔 (if 1)
 4. If the leading (most significant) bits are zero, you can omit them.
 5. If the leading bits match the ones in the table below, you omit them and add the emoji(s) somewhere (including start and end) in the chunk (randomly).
 
@@ -29,26 +29,26 @@ For example, to turn `A` into ChES:
 2. Take the leading bits: `0100` (`0001` is left)
 3. Get the emoji that corresponds to the leading bits: `❄️`
 4. Omit the remaining leading bits: `0001` -> `1`
-5. Presents/potatoes: `🎁`
-6. Combine the emojis: (`🎄` +) `🎁` + `❄️` -> `🎄❄️🎁`
+5. Presents/potatoes: `🥔`
+6. Combine the emojis: `🥔` + `❄️` -> `❄️🥔`
 
 ## Examples
 
 ### Hello, world!
 ```
-H: 🎁❄️🥔🥔🥔🎄
-e: 🎁🥔🔔🎁🎄
-l: 🎁🎁🥔🔔🥔🎄
-l: 🔔🎁🎁🥔🥔🎄
-o: 🎁🔔🎁🎁🎁🎄
-,: 🎁🥔🎁🎁🥔🥔🎄
- : 🎁🥔🥔🥔🥔🥔🎄
-w: 🕯️🎁🎁🎁🎄
-o: 🔔🎁🎁🎁🎁🎄
-r: 🕯️🎁🥔🎄
-l: 🔔🎁🎁🥔🥔🎄
-d: 🎁🔔🥔🥔🎄
-!: 🎁🥔🥔🥔🥔🎁
+H: 🥔🎁🎁❄️🎁🎄
+e: 🥔🎁🔔🥔🎄
+l: 🔔🥔🥔🎁🎁🎄
+l: 🥔🔔🥔🎁🎁🎄
+o: 🥔🥔🥔🔔🥔🎄
+,: 🥔🎁🥔🥔🎁🎁🎄
+ : 🥔🎁🎁🎁🎁🎁🎄
+w: 🥔🥔🕯️🥔🎄
+o: 🥔🥔🔔🥔🥔🎄
+r: 🕯️🥔🎁🎄
+l: 🥔🔔🥔🎁🎁🎄
+d: 🥔🎁🔔🎁🎄
+!: 🥔🎁🎁🎁🎁🥔
 ```
 
 The stuff at the start of every row aren't present in actual encoded data.
