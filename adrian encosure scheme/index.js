@@ -107,7 +107,7 @@ function adrian_decode(text, return_string) {
         let words = line.split(/ /g);
 
         let stars1 = 0;
-        for (let c of words[0]) {
+        for (let c of words[0] || "") {
             if (c == "*")
                 stars1++;
             else
@@ -116,7 +116,7 @@ function adrian_decode(text, return_string) {
         stars1 = stars1 % 4; // make sure the prefix doesn't overflow in edge cases
 
         let stars2 = 0;
-        for (let c of words[1]) {
+        for (let c of words[1] || "") {
             if (c == "*")
                 stars2++;
             else
@@ -125,7 +125,7 @@ function adrian_decode(text, return_string) {
         stars2 = stars2 % 4; // make sure the prefix doesn't overflow in edge cases
 
         let stars3 = 0;
-        for (let c of words[2]) {
+        for (let c of words[2] || "") {
             if (c == "*")
                 stars3++;
             else
