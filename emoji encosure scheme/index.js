@@ -59,6 +59,8 @@ function emoji_encode(input) {
 function emoji_decode(text, return_string) {
     let ret = [];
 
+    text = text.trim();
+
     for (let i = 0; i < text.length; i += 4) {
         let v0 = text[i];
         let v1 = text[i + 1];

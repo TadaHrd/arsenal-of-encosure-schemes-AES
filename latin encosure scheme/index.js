@@ -543,7 +543,7 @@ function latin_encode(input, sep) {
 function latin_decode(text, return_string) {
     let ret = [];
 
-    text = text.replace(".", "").toLowerCase();
+    text = text.trim().replace(".", "").toLowerCase();
 
     for (let val of text.split(latin_sep_regex)) {
         ret.push(latinTable[val]);

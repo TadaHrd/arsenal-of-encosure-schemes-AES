@@ -81,7 +81,7 @@ function grand_decode(text, return_string) {
     let n = 0, last = 0;
     let seed, seedBits, v0, v1, v2;
 
-    let textSplit = text.split(grand_sep_regex);
+    let textSplit = text.trim().split(grand_sep_regex);
 
     for (let i = 0; i < textSplit.length; i++) {
         let line = textSplit[i];

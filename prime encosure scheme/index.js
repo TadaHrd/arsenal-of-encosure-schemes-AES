@@ -35,7 +35,7 @@ function prime_encode(input, sep) {
 function prime_decode(text, return_string) {
     let ret = [];
 
-    for (let val of text.split(prime_sep_regex)) {
+    for (let val of text.trim().split(prime_sep_regex)) {
         let v = 0;
 
         if (val % 2  == 0) v += 1;

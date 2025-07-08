@@ -80,7 +80,7 @@ function brainfuck_encode(input) {
 function brainfuck_decode(text, return_string) {
     let ret = [];
 
-    text = text.replace(brainfuck_check_regex, "");
+    text = text.trim().replace(brainfuck_check_regex, "");
 
     for (let i = 0; i < text.length; i += 4) {
         let v0 = brainfuckTable[text[i]];

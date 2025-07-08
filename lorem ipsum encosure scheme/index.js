@@ -64,12 +64,7 @@ function lorem_encode(input) {
 function lorem_decode(text, return_string) {
     let ret = [];
 
-    if (text == "") {
-        if (return_string) return "";
-        else return [];
-    }
-
-    text = text.replace(/[^a-zA-Z]/g, "");
+    text = text.trim().replace(/[^a-zA-Z]/g, "");
 
     for (let i = 0; i < text.length; i += 8) {
         let bits = [];

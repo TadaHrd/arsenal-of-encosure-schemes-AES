@@ -90,7 +90,7 @@ function bussin_encode(input, sep) {
 function bussin_decode(text, return_string) {
     let ret = [];
 
-    let text_split = text.split(bussin_sep_regex);
+    let text_split = text.trim().split(bussin_sep_regex);
 
     for (let i = 0; i < text_split.length; i++) {
         let v0 = text_split[i];

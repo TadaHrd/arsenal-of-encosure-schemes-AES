@@ -67,7 +67,7 @@ function ook_encode(input, sep) {
 function ook_decode(text, return_string) {
     let ret = [];
 
-    let text_split = text.split(ook_sep_regex);
+    let text_split = text.trim().split(ook_sep_regex);
 
     for (let i = 0; i < text_split.length; i++) {
         let v0 = text_split[i];

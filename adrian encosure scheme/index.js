@@ -96,12 +96,7 @@ function escaped_adrian_decode(input, sep) {
 function adrian_decode(text, return_string) {
     let ret = [];
 
-    if (text == "") {
-        if (return_string) return "";
-        else return [];
-    }
-
-    for (let line of text.split(adrian_sep_regex)) {
+    for (let line of text.trim().split(adrian_sep_regex)) {
         line = line.replace(/\\\*/g, "");
 
         let words = line.split(/ /g);

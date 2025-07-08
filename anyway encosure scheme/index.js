@@ -53,7 +53,7 @@ function escaped_anyway_decode(input, sep) {
 function anyway_decode(text, return_string) {
     let ret = [];
 
-    for (let line of text.split(anyway_sep_regex)) {
+    for (let line of text.trim().split(anyway_sep_regex)) {
         let stars = 0;
 
         line = line.replace(/\\\*/g, "");
