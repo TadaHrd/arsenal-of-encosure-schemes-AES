@@ -81,8 +81,6 @@ function brainfuck_decode(text, return_string) {
 
     text = text.replace(brainfuck_check_regex, "");
 
-    console.log(text)
-
     for (let i = 0; i < text.length; i += 4) {
         let v0 = brainfuckTable[text[i]];
         let v1 = brainfuckTable[text[i + 1] || brainfuckTable[0]];
@@ -90,8 +88,6 @@ function brainfuck_decode(text, return_string) {
         let v3 = brainfuckTable[text[i + 3] || brainfuckTable[0]];
 
         let val = (v0 << 0) + (v1 << 2) + (v2 << 4) + (v3 << 6);
-
-        console.log(val)
 
         ret.push(val);
     }
