@@ -62,6 +62,7 @@ o: OoK. Ook!
 r: Ook. OoK
 l: OoK. OOK!
 d: OoK. OOK.
+!: OoK OOk
 ```
 
 The characters at the start of every row aren't present in actual encoded data.

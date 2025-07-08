@@ -12,7 +12,7 @@ function prime_encode(input, sep) {
         data = input;
 
     if (!prime_sep_check_regex.test(sep) || sep == undefined)
-        sep = ","
+        sep = ",";
 
     let ret = "";
     for (let val of data) {
