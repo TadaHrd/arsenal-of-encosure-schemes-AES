@@ -35,11 +35,12 @@ Each byte of data is randomly encoded to either AES, EES, or BES with a seperato
 
 For example, "A" would be:
 - 65 in ASCII
-- AES: `*ANYWaY*`, EES: `👽😄`, BES: `sus bussin`
+    - (AES: `*ANYWaY*`, EES: `👽😄`, BES: `sus bussin`)
 - Random metadata seed: `1111_1111_1111_1111`
 - Perform wrapping subtraction: `0 - 65 (wrapping) = (0 - 65 + 256) % 256 = 191`
+- Encode to one of: AES: `***anywAy***`, EES: `🥽📣`, BES: `finna smh`
 - Metadata: `***anyway*** smh 📣`
-- Any one of: `***anyway*** smh 📣 *ANYWaY*`, `***anyway*** smh 📣 👽😄`, `***anyway*** smh 📣 sus bussin`
+- Any one of: `***anyway*** smh 📣 ***anywAy***`, `***anyway*** smh 📣 🥽📣`, `***anyway*** smh 📣 finna smh`
 
 # Escaped GES (EGES)
 
