@@ -37,7 +37,7 @@ function abc_encode(input, sep) {
 function abc_decode(text, return_string) {
     let ret = [];
 
-    for (let val of text.split(abc_sep_regex)) {
+    for (let val of text.trim().split(abc_sep_regex)) {
         let v = 0;
 
         for (let letter of val) {
