@@ -58,15 +58,17 @@ const charBussinTable = {
 let bussin_sep_check_regex = /^[^A-Za-z]+$/;
 let bussin_sep_regex = /[^A-Za-z]+/;
 
-function bussin_encode(input, sep) {
+function bussin_encode(input, sep = "\n") {
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);
     else
         data = input;
 
-    if (!bussin_sep_check_regex.test(sep) || sep == undefined)
+    if (!bussin_sep_check_regex.test(sep)) {
+        if (window.separatorWarn != undefined) window.separatorWarn = true;
         sep = "\n";
+    }
 
     let ret = "";
     for (let val of data) {

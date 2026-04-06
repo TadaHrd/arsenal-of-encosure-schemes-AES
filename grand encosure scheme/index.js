@@ -25,15 +25,17 @@ function escaped_grand_encode(input, sep) {
     return grand_encode(input, sep, true);
 }
 
-function grand_encode(input, sep, escape = false) {
+function grand_encode(input, sep = "\n", escape = false) {
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);
     else
         data = input;
 
-    if (sep == undefined || !grand_sep_check_regex.test(sep))
+    if (!grand_sep_check_regex.test(sep)) {
+        if (window.separatorWarn != undefined) window.separatorWarn = true;
         sep = "\n";
+    }
 
     function wrappingAddSub(a, b, sub) {
         return sub ? (a - b + 256) % 256 : (a + b) % 256;

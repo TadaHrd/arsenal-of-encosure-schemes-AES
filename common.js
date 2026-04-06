@@ -6,13 +6,15 @@ window.chr = String.fromCharCode;
 window.ord = char => char.charCodeAt(0);
 window.rand = max => Math.floor(Math.random() * (max + 1)) % (max + 1);
 window.updateValue = function updateValue(data, type) {
-    if (type == "encode")
+    if (type == "encode") {
+        window.separatorWarn = false;
         window.output.value = window["escaped_".substring(0, 8 * window.escaped) + window.selectedScheme + "_encode"](data, separator.value.replace(/\\n/g, "\n"));
-    else if (type == "decode")
+        window.separatorWarnIndicator.innerText = separatorWarn? "⚠️" : "";
+    } else if (type == "decode")
         window.input.value = window["escaped_".substring(0, 8 * window.escaped) + window.selectedScheme + "_decode"](data, true);
 };
 window.updateScheme = function updateScheme(element) {
-    window.escaped = element.parentElement.parentElement.querySelector("input[type='checkbox']")?.checked || false;
+    window.escaped = element.parentElement.parentElement.querySelector(".escapeCheckbox")?.checked || false;
     window.selectedScheme = element.value;
     updateValue(window.input.value, "encode");
 }
@@ -40,6 +42,8 @@ window.escaped = false;
 window.selectedScheme = "anyway";
 
 window.separator = document.getElementById("separator-text");
+window.separatorWarn = false;
+window.separatorWarnIndicator = document.getElementById("separator-warn");
 
 // types
 window.Bool = Boolean;

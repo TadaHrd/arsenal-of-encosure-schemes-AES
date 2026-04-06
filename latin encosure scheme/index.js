@@ -519,16 +519,17 @@ const latinTable = {
 let latin_sep_check_regex = /^[^A-Za-z.]+$/;
 let latin_sep_regex = /[^A-Za-z.]+/;
 
-function latin_encode(input, sep) {
+function latin_encode(input, sep = " ") {
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);
     else
         data = input;
 
-    if (!latin_sep_check_regex.test(sep))
+    if (!latin_sep_check_regex.test(sep)) {
+        if (window.separatorWarn != undefined) window.separatorWarn = true;
         sep = " ";
-
+    }
 
     let ret = "";
     for (let val of data) {

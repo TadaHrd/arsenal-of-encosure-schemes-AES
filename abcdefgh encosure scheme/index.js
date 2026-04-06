@@ -4,15 +4,17 @@
 let abc_sep_regex = /[^A-H]+/g;
 let abc_sep_check_regex = /^[^A-H]+$/;
 
-function abc_encode(input, sep) {
+function abc_encode(input, sep = "I") {
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);
     else
         data = input;
 
-    if (!abc_sep_check_regex.test(sep) || sep == undefined)
+    if (!abc_sep_check_regex.test(sep)) {
+        if (window.separatorWarn != undefined) window.separatorWarn = true;
         sep = "I";
+    }
 
     let ret = "";
     for (let val of data) {

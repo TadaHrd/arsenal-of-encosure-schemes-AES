@@ -40,15 +40,17 @@ let ookTable = {
 let ook_sep_check_regex = /^[^oOkK?!.]+$/;
 let ook_sep_regex = /[^oOkK?!.]+/;
 
-function ook_encode(input, sep) {
+function ook_encode(input, sep = "\n") {
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);
     else
         data = input;
 
-    if (!ook_sep_check_regex.test(sep) || sep == undefined)
+    if (!ook_sep_check_regex.test(sep)) {
+        if (window.separatorWarn != undefined) window.separatorWarn = true;
         sep = "\n";
+    }
 
     let ret = "";
     for (let val of data) {

@@ -8,15 +8,17 @@ function escaped_anyway_encode(input, sep) {
     return anyway_encode(input, sep, true);
 }
 
-function anyway_encode(input, sep, escape = false) {
+function anyway_encode(input, sep = "\n", escape = false) {
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);
     else
         data = input;
 
-    if (!anyway_sep_check_regex.test(sep) || sep == undefined)
+    if (!anyway_sep_check_regex.test(sep)) {
+        if (window.separatorWarn != undefined) window.separatorWarn = true;
         sep = "\n";
+    }
 
     let ret = "";
     for (let val of data) {

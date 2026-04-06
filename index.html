@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Arsenal of Encosure Schemes (AES) v2.4</h1> <br>
+    <h1>Arsenal of Encosure Schemes (AES) v2.5</h1> <br>
 
     <main>
         <h2 class="select-text">Select scheme:</h2>
@@ -28,7 +28,7 @@
                 <tr>
                     <td>Anyway Encosure Scheme</td>
                     <td><input type="radio" checked="checked" value="anyway" name="schemeChoice" id="anywayChoice" onchange="updateScheme(event.target)"></td>
-                    <td><input type="checkbox" name="anyway" onchange="setEscaped(event.target)"></td>
+                    <td><input type="checkbox" name="anyway" class="escapeCheckbox" onchange="setEscaped(event.target)"></td>
                 </tr>
                 <tr>
                     <td>Emoji Encosure Scheme</td>
@@ -44,7 +44,7 @@
                 <tr>
                     <td>Double Anyway Encosure Scheme</td>
                     <td><input type="radio" value="double_anyway" name="schemeChoice" id="double_anywayChoice" onchange="updateScheme(event.target)"></td>
-                    <td><input type="checkbox" name="double_anyway" onchange="setEscaped(event.target)"></td>
+                    <td><input type="checkbox" name="double_anyway" class="escapeCheckbox" onchange="setEscaped(event.target)"></td>
                 </tr>
                 <tr>
                     <td>Lorem ipsum Encosure Scheme</td>
@@ -69,7 +69,7 @@
                 <tr>
                     <td style="color: gold; border: 2px solid white;">Grand Encosure Scheme</td>
                     <td><input type="radio" value="grand" name="schemeChoice" id="grandChoice" onchange="updateScheme(event.target)"></td>
-                    <td><input type="checkbox" name="grand" onchange="setEscaped(event.target)"></td>
+                    <td><input type="checkbox" name="grand" class="escapeCheckbox" onchange="setEscaped(event.target)"></td>
                 </tr>
                 <tr>
                     <td>ABCDEFGH Encosure Scheme</td>
@@ -86,6 +86,7 @@
 
         <h3 class="select-text">Separator (\n for newline):</h3>
         <input type="text" id="separator-text" value=" " oninput="updateValue(input.value, 'encode')">
+        <span id="separator-warn"></span>
 
         <br>
 
@@ -118,5 +119,9 @@
     <script src="grand encosure scheme/index.js"></script> <!-- NOTE: this MUST be after AES, EES, and BES. It depends on those schemes. -->
     <script src="abcdefgh encosure scheme/index.js"></script>
     <script src="christmas encosure scheme/index.js"></script>
+    <script>
+        // LOAD THE SCHEME WHICH IS SELECTED EVEN AFTER A RELOAD OF THE WEBPAGE
+        updateScheme(document.getElementById("schemeSelect").querySelector('input[name="schemeChoice"]:checked'))
+    </script>
 </body>
 </html>

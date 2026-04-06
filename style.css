@@ -23,8 +23,14 @@
     width: 800px;
 }
 
-#separator-text, #seperator-newline {
+#separator-text,
+#seperator-newline {
     padding: 2px;
+    font-size: 1.25rem;
+}
+
+#separator-warn {
+    padding: 0.25rem;
     font-size: 1.25rem;
 }
 
@@ -37,7 +43,8 @@
     font-weight: bold;
 }
 
-#schemeSelect, #schemeSelect td {
+#schemeSelect,
+#schemeSelect td {
     border: 2px solid;
     margin: 0;
     padding: 5px;

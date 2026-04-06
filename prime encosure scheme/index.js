@@ -4,15 +4,17 @@
 let prime_sep_regex = /[^0-9]+/g;
 let prime_sep_check_regex = /^[^0-9]+$/;
 
-function prime_encode(input, sep) {
+function prime_encode(input, sep = ",") {
     let data;
     if (typeof input == "string")
         data = textEncoder.encode(input);
     else
         data = input;
 
-    if (!prime_sep_check_regex.test(sep) || sep == undefined)
+    if (!prime_sep_check_regex.test(sep)) {
+        if (window.separatorWarn != undefined) window.separatorWarn = true;
         sep = ",";
+    }
 
     let ret = "";
     for (let val of data) {

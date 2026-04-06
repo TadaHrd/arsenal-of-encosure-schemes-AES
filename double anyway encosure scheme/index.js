@@ -18,13 +18,15 @@ function escaped_double_anyway_encode(input, sep) {
     return double_anyway_encode(input, sep, true);
 }
 
-function double_anyway_encode(input, sep, escape = false) {
+function double_anyway_encode(input, sep = "\n", escape = false) {
     let data;
     if (typeof input == "string") data = textEncoder.encode(input);
     else data = input;
 
-    if (!double_anyway_sep_check_regex.test(sep) || sep == undefined)
+    if (!double_anyway_sep_check_regex.test(sep)) {
+        if (window.separatorWarn != undefined) window.separatorWarn = true;
         sep = "\n";
+    }
 
     let words = bytesToWords(data);
 
