@@ -88,13 +88,13 @@ Unlike some other schemes, this scheme's escaping is symmetrical, meaning it has
 ### Hello, world!
 
 ```
-wlH!relodl ,o
+leHdrwl,oo l!
 ```
 
 ### Russian Hello, world! (Привет, мир!)
 
 ```
-$@_$2@6$1@x$1@r$1@u$2@8, $1@|$1@x$2@6!
+616@$1!2$r _@$,x@1$@21@8@@|$$@$$1u$12x@
 ```
 
 As you can see, unicode characters are an issue in this scheme.
