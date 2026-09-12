@@ -1,9 +1,9 @@
 // Written by TadaHrd.
 // If this doesn't work blame him.
 
-function mulberry32(seed, mod) {
+function mulberry32(seed) {
   let t = Number(seed % BigInt(2 ** 32)); // force seed into uint32
-  return function next() {
+  return function next(mod) {
     t = (t + 0x6d2b79f5) >>> 0; // advance internal state (uint32 wrap)
     // Mix bits using xor-shifts and 32-bit multiplication.
     let x = Math.imul(t ^ (t >>> 15), t | 1);
@@ -77,7 +77,7 @@ function shuffle_encode(input, _sep, escape = false) {
   for (let byte of ret) {
     seed += BigInt(byte);
   }
-  seed *= 81839;
+  seed *= 81839n;
   let rand = mulberry32(seed);
   let j_list = [];
 
@@ -114,17 +114,17 @@ function shuffle_decode(text, return_string, escape = false) {
 
   text = textEncoder.encode(text);
 
-  let seed = text.length;
+  let seed = BigInt(text.length);
   for (let byte of text) {
-    seed += byte;
+    seed += BigInt(byte);
   }
-  seed *= 81839;
+  seed *= 81839n;
   let rand = mulberry32(seed);
 
   let j_list = [];
 
   for (let i = text.length - 1; i >= 1; i--) {
-    let j = Math.floor(rand() * (i + 1));
+    let j = rand(i + 1);
     j_list[i] = j;
   }
 

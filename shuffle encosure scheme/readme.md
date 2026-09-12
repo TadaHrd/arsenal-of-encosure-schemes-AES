@@ -94,7 +94,7 @@ wlH!relodl ,o
 ### Russian Hello, world! (Привет, мир!)
 
 ```
-16 1$@1@$$_@$1@|@6x@,2$$2$18xu1$r$2@!@@
+$@_$2@6$1@x$1@r$1@u$2@8, $1@|$1@x$2@6!
 ```
 
 As you can see, unicode characters are an issue in this scheme.
