@@ -51,7 +51,7 @@ seed = ((text length + sum of all bytes) * 81839) % (2 ** 32)
 
 ### RNG
 
-The seed is fed into a mulberry32 algorithm, which is a seeded RNG. 
+The seed is fed into a modified mulberry32 algorithm, which is a seeded RNG. 
 This seed is the initial internal state.
 
 Every time the RNG is called, the following happens:
@@ -70,7 +70,7 @@ Every time the RNG is called, the following happens:
 
 The text is shuffled via a Fisher-Yates algorithm:
 1. Loop through the list backwards, excluding the very first byte.
-2. Use the mulberry32 RNG generator to come up with a new index.
+2. Use the modified mulberry32 RNG generator to come up with a new index.
 3. Swap the 2 bytes at those indices.
 
 Deshuffling is the same process, but backwards.
