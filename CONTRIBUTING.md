@@ -28,5 +28,5 @@ Examples: `1.0`, `2.5`, `2.5fix1`, `2.5fix128`
 
 1. The major version gets incremented when something big happens
     - such as a big ES or a certain amount of ESes reached
-2. The minor version gets incremented when ES(es) are added.
-3. The fix number gets incremented when a bug is fixed (first bug fixed would be `fix1`)
+2. The minor version gets incremented when ES(es) are added or changed.
+3. The fix number gets incremented when a bug is fixed without changing function (first bug fixed would be `fix1`)
