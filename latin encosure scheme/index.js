@@ -536,7 +536,7 @@ function latin_encode(input, sep = " ") {
         ret += latinTable[val] + sep;
     }
 
-    if (ret[0]) ret[0] = ret[0].toUpperCase();
+    if (ret[0]) ret = ret[0].toUpperCase() + ret.substring(1);
 
     return ret.substring(0, ret.length - sep.length) + ".";
 }
