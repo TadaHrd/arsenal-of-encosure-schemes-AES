@@ -17,6 +17,7 @@ To turn a byte into a AbcES byte:
 8. Append `G` if bit 6 in on
 9. Append `H` if bit 7 in on
 10. Shuffle it around
+11. If the byte is 0, use `Z` (this is important due to how separators work, they can't tell between two separators and one big separator)
 
 For example to turn `A` into AbcES:
 1. Get its bits: `01000001`
@@ -24,7 +25,7 @@ For example to turn `A` into AbcES:
 3. Mix them: `AG`
 
 The value 255 in AbcES would be `ABCDEFGH` (without shuffling).
-The value 0 would be ``.
+The value 0 would be `Z`.
 
 ## Examples
 

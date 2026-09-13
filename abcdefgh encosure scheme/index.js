@@ -1,8 +1,8 @@
 // Written by TadaHrd.
 // If this doesn't work blame him.
 
-let abc_sep_regex = /[^A-H]+/g;
-let abc_sep_check_regex = /^[^A-H]+$/;
+let abc_sep_regex = /[^A-HZ]+/g;
+let abc_sep_check_regex = /^[^A-HZ]+$/;
 
 function abc_encode(input, sep = "I") {
     let data;
@@ -27,6 +27,7 @@ function abc_encode(input, sep = "I") {
         if ((val >> 5) & 0b1) v += "F";
         if ((val >> 6) & 0b1) v += "G";
         if ((val >> 7) & 0b1) v += "H";
+        if (val == 0) v = "Z";
 
         v = shuffleString(v);
 
@@ -52,6 +53,8 @@ function abc_decode(text, return_string) {
                 case "F": v += 32; break;
                 case "G": v += 64; break;
                 case "H": v += 128; break;
+                // this doesn't have to be here, but let's keep it for the sake of all the possibilites
+                case "Z": v = 0; break;
             }
         }
 
